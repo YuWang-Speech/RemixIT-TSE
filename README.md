@@ -37,7 +37,7 @@ Compared with the original RemixIT framework, RemixIT-TSE introduces two key mod
  
 ## Performance 
  
-We evaluate RemixIT-TSE on the **REAL-TSE Challenge** development and evaluation sets. 
+We evaluate RemixIT-TSE on the **REAL-TSE Challenge**  evaluation sets. 
  
 ### REAL-TSE Evaluation Set 
  

@@ -1,25 +1,94 @@
-# RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for Target Speech Extraction via Target-Aware Supervision and Remixing
-
-This repository is the official implementation of **RemixIT-TSE**, a progressive synthetic-to-real adaptation framework for real-world target speech extraction (TSE).
-
-## About RemixIT-TSE
-
-RemixIT-TSE extends the RemixIT paradigm from speech enhancement to target speech extraction. The framework progressively adapts a synthetic-trained TSE model to real-world recordings through **Target-Aware Adaptation (TAA)** and **RemixIT-TSE Adaptation (RTA)**, using weak speaker supervision, quality-aware pseudo-target filtering, and target-only pseudo-label supervision.
-
-## Release Plan
-
-The paper is currently under review. Before acceptance, we plan to release:
-
-- Model files
-- Demo audio
-- Supporting materials
-
-The complete training and adaptation code will be released after paper acceptance.
-
-## Demo
-
-Audio examples will be provided in this repository.
-
-## Citation
-
-Citation information will be added after the preprint/publication becomes available.
+# RemixIT-TSE 
+ 
+This repository is the official project page for **RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for Target Speech Extraction via Target-Aware Supervision and Remixing**. 
+ 
+RemixIT-TSE extends the RemixIT paradigm from speech enhancement to real-world target speech extraction (TSE), enabling adaptation to real conversational recordings without requiring signal-level clean target references. 
+ 
+> **Note:** The paper is currently under review. Pre-trained models and audio demonstrations will be released first. The complete training and adaptation code will be made publicly available after paper acceptance. 
+ 
+## 🔥 News 
+ 
+- [**2026-09**] The RemixIT-TSE project page is released. 
+- [**2026-09**] Pre-trained models and audio examples will be available soon. 
+ 
+## About RemixIT-TSE 
+ 
+Target Speech Extraction (TSE) aims to extract the speech of a target speaker from a multi-speaker mixture using an enrollment utterance. Although supervised TSE systems perform well on synthetic mixtures, their performance often degrades substantially in real-world conversational environments where clean target references are unavailable. 
+ 
+We propose **RemixIT-TSE**, a progressive synthetic-to-real adaptation framework that transfers a synthetic-trained TSE model to real-world recordings through three stages: 
+ 
+1. **Synthetic-Data Pretraining (SDP)**   
+   Establishes the fundamental target extraction capability using fully supervised synthetic mixtures. 
+ 
+2. **Target-Aware Adaptation (TAA)**   
+   Introduces real-domain information through joint synthetic-real training with weak speaker and temporal annotations. 
+ 
+3. **RemixIT-TSE Adaptation (RTA)**   
+   Further adapts the model using only real-world recordings through teacher-generated pseudo-targets and remixing. 
+ 
+Compared with the original RemixIT framework, RemixIT-TSE introduces two key modifications tailored to TSE: 
+ 
+- **Quality-aware pseudo-target filtering**, with particular emphasis on speaker similarity, to suppress unreliable teacher estimates. 
+- **Target-only supervision**, removing the original Non-target/residual loss to better align the adaptation objective with target-speaker extraction. 
+ 
+<p align="center"> 
+  <img src="assets/remixit_tse_framework.png" width="95%"> 
+</p> 
+ 
+## Performance 
+ 
+We evaluate RemixIT-TSE on the **REAL-TSE Challenge** development and evaluation sets. 
+ 
+### REAL-TSE Evaluation Set 
+ 
+| Set | System | TER ↓ | SIM ↑ | OVRL ↑ | P808 ↑ | F1 ↑ | 
+|:---:|:---|:---:|:---:|:---:|:---:|:---:| 
+| EVAL-1 | SDP (Baseline) | 0.726 | 0.485 | 2.049 | 2.923 | 0.824 | 
+| EVAL-1 | **RemixIT-TSE** | **0.680** | **0.533** | **2.173** | **3.088** | **0.837** | 
+| EVAL-2 | SDP (Baseline) | 0.763 | 0.335 | 1.850 | 2.710 | 0.804 | 
+| EVAL-2 | **RemixIT-TSE** | **0.713** | **0.408** | **2.040** | **2.978** | **0.837** | 
+| Combined | SDP (Baseline) | 0.748 | 0.395 | 1.929 | 2.790 | 0.812 | 
+| Combined | **RemixIT-TSE** | **0.700** | **0.458** | **2.093** | **3.022** | **0.837** | 
+ 
+On the unseen **EVAL-2** set, RemixIT-TSE achieves a **6.53% relative TER reduction**, together with relative improvements of **21.84% in SIM**, **9.89% in DNSMOS-P808**, and **4.10% in F1** over the source-domain baseline. 
+ 
+## Audio Demo 
+ 
+Audio examples will be provided in the `demo` folder. 
+ 
+The demo will include: 
+ 
+- Mixture 
+- Enrollment utterance 
+- SDP baseline output 
+- RemixIT-TSE output 
+ 
+> 🎧 Audio samples coming soon. 
+ 
+## Pre-trained Models 
+ 
+Pre-trained RemixIT-TSE models will be released in the `checkpoints` folder. 
+ 
+| Model | Description | Checkpoint | 
+|:---|:---|:---:| 
+| SDP | Synthetic-data pretrained baseline | Coming soon | 
+| RemixIT-TSE | Final progressively adapted model | Coming soon | 
+ 
+## Code Release 
+ 
+To facilitate reproducibility, we plan to release the complete codebase after the paper review process. 
+ 
+The future release will include: 
+ 
+- Data preparation 
+- Synthetic-Data Pretraining (SDP) 
+- Target-Aware Adaptation (TAA) 
+- Quality-aware pseudo-target filtering 
+- RemixIT-TSE Adaptation (RTA) 
+- Inference and evaluation scripts 
+ 
+For now, this repository provides the model checkpoints, framework description, and audio demonstrations. 
+ 
+## Citation 
+ 
+If you find this work useful, please consider citing our paper: 

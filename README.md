@@ -92,3 +92,12 @@ For now, this repository provides the model checkpoints, framework description, 
 ## Citation 
  
 If you find this work useful, please consider citing our paper: 
+@misc{RemixIT-TSE2026,
+      title={RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for Target Speech Extraction via Target-Aware Supervision and Remixing}, 
+      author={Yu Wang and Haixin Guan and Shuang Wei and Yanhua Long},
+      year={2026},
+      eprint={2609.35118},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2609.35118}, 
+}

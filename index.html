@@ -64,9 +64,10 @@ Target Speech Extraction (TSE) in real-world conversational scenarios suffers fr
 <p>To adapt RemixIT to the TSE setting, two key modifications are introduced. First, quality-aware filtering retains reliable teacher pseudo-targets according to speaker consistency and transcription quality, reducing erroneous target-speaker supervision. Second, RemixIT-TSE removes direct supervision on the Non-target component, which may contain interfering speakers, noise, reverberation, and teacher errors, and instead optimizes the student only against the detached teacher Target using negative SI-SNR loss.</p>
 <div class="method-highlight">In this way, pseudo-target quality and target-speaker consistency are explicitly prioritized during real-world adaptation, while the Non-target component is used only for remixing.</div>
 </div>
-
+  
 <div class="figure">
-<img src="assets/framework.png" alt="Overview of the proposed RemixIT-TSE framework">
+<img src="resources/framework.png"
+     alt="Overview of the proposed RemixIT-TSE framework">
 <div class="caption">Overview of the proposed progressive synthetic-to-real adaptation framework for target speech extraction.</div>
 </div>
 

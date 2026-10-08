@@ -32,7 +32,7 @@ Compared with the original RemixIT framework, RemixIT-TSE introduces two key mod
 - **Target-only supervision**, removing the original Non-target/residual loss to better align the adaptation objective with target-speaker extraction. 
  
 <p align="center"> 
-  <img src="assets/remixit_tse_framework.png" width="95%"> 
+  <img src="resources/framework.png" width="95%"> 
 </p> 
  
 ## Performance 

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RemixIT-TSE</title>
+
+<style>
+
+:root {
+    --primary: #1f4e79;
+    --primary-light: #eef5fb;
+    --primary-soft: #dcebf7;
+    --accent: #3f7cac;
+
+    --text: #222222;
+    --subtext: #5f6b76;
+
+    --border: #d9e1e8;
+    --table-head: #edf4f9;
+    --background-soft: #f8fafc;
+}
+
+/* ============================================================
+   Global
+============================================================ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.65;
+}
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 42px 0 60px;
+}
+
+
+/* ============================================================
+   Header
+============================================================ */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 auto 15px;
+    max-width: 1050px;
+    color: var(--primary);
+}
+
+.authors {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 38px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 5px 6px;
+    padding: 8px 17px;
+
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.links a:hover {
+    color: #ffffff;
+    background: var(--primary);
+}
+
+
+/* ============================================================
+   Sections
+============================================================ */
+
+h2 {
+    margin-top: 48px;
+    margin-bottom: 18px;
+    padding-bottom: 7px;
+
+    border-bottom: 2px solid var(--primary-soft);
+
+    font-size: 25px;
+    color: var(--primary);
+}
+
+h3 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.text {
+    text-align: justify;
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   Method Highlight
+============================================================ */
+
+.method-flow {
+    text-align: center;
+
+    margin: 24px 0;
+    padding: 15px 10px;
+
+    background: var(--primary-light);
+    border: 1px solid var(--primary-soft);
+    border-radius: 8px;
+
+    color: var(--primary);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.method-highlight {
+    margin-top: 20px;
+    padding: 15px 18px;
+
+    border-left: 4px solid var(--accent);
+    background: var(--background-soft);
+    border-radius: 4px;
+
+    color: #333333;
+}
+
+
+/* ============================================================
+   Figure
+============================================================ */
+
+.figure {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.figure img {
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 6px;
+}
+
+.caption {
+    max-width: 900px;
+    margin: 10px auto 0;
+
+    color: var(--subtext);
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   Tables
+============================================================ */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    margin: 18px 0 32px;
+
+    font-size: 14px;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+
+    padding: 9px 10px;
+
+    text-align: center;
+}
+
+th {
+    background: var(--table-head);
+    color: var(--primary);
+
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background: #fbfcfd;
+}
+
+tbody tr:hover {
+    background: #f5f9fc;
+}
+
+.best {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.note {
+    background: var(--primary-light);
+
+    border-left: 4px solid var(--primary);
+
+    padding: 15px 18px;
+    margin: 20px 0;
+
+    border-radius: 4px;
+}
+
+
+/* ============================================================
+   Audio
+============================================================ */
+
+.demo-block {
+    margin-top: 32px;
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+.demo-title {
+    font-size: 21px;
+    font-weight: bold;
+
+    margin-bottom: 17px;
+
+    color: var(--primary);
+}
+
+.audio-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.audio-item {
+    padding: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: var(--background-soft);
+}
+
+.audio-item strong {
+    display: block;
+
+    min-height: 42px;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    color: #34495e;
+}
+
+audio {
+    width: 100%;
+}
+
+
+/* ============================================================
+   Citation
+============================================================ */
+
+pre {
+    overflow-x: auto;
+
+    background: var(--background-soft);
+
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+
+    border-radius: 6px;
+
+    padding: 15px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   Footer
+============================================================ */
+
+footer {
+    text-align: center;
+
+    margin-top: 60px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: #777777;
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   Mobile
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .audio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .audio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .authors {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- ============================================================
+     Title
+============================================================ -->
+
+<h1>
+RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for
+Target Speech Extraction via Target-Aware Supervision and Remixing
+</h1>
+
+<div class="authors">
+Yu Wang &nbsp;&nbsp;
+Haixin Guan &nbsp;&nbsp;
+Shuang Wei &nbsp;&nbsp;
+Yanhua Long
+</div>
+
+
+<div class="links">
+
+<a href="https://arxiv.org/abs/2609.35118" target="_blank">
+Paper
+</a>
+
+<a href="https://github.com/YuWang-Speech/RemixIT-TSE" target="_blank">
+GitHub
+</a>
+
+</div>
+
+
+<!-- ============================================================
+     Abstract
+============================================================ -->
+
+<h2>Abstract</h2>
+
+<div class="text">
+
+<p>
+Target Speech Extraction (TSE) in real-world conversational scenarios
+suffers from severe performance degradation due to the domain gap
+between synthetic training data and complex acoustic environments,
+where signal-level ground truth is typically unavailable. To address
+this challenge, we make the first attempt to extend RemixIT from
+speech enhancement to TSE and propose a progressive synthetic-to-real
+adaptation framework for real-world TSE with two fine-tuning stages.
+The first stage leverages region-wise speaker similarity and silence
+constraints within a target-aware adaptation framework to jointly
+optimize the model using synthetic and weakly supervised real-world
+data, injecting real-world traits while preserving synthetic-learned
+capabilities. The second stage further adapts the model using only
+real-world data through our RemixIT-TSE, where quality-filtered teacher
+pseudo targets, which guarantee reliable student training, provide
+signal-level supervision via SI-SNR loss. Experiments on the real
+conversational evaluation set (EVAL-2) of the SLT 2026 REAL-TSE
+Challenge, the proposed method achieves a 6.53% relative TER reduction,
+together with relative improvements of 21.84% in speaker similarity,
+9.89% in DNSMOS-P808, and 4.10% in target-activity F1 over the
+source-domain baseline, demonstrating its effectiveness under unseen
+real-world conditions.
+</p>
+
+</div>
+
+
+<!-- ============================================================
+     Method Overview
+============================================================ -->
+
+<h2>Method Overview</h2>
+
+<div class="text">
+
+<p>
+RemixIT-TSE adopts a progressive synthetic-to-real adaptation strategy
+for real-world target speech extraction. Starting from a TSE model
+pretrained on synthetic data, Target-Aware Adaptation (TAA) first
+jointly exploits synthetic and weakly supervised real-world data to
+reduce the domain gap. RemixIT-TSE Adaptation (RTA) then further
+adapts the model using only real-world recordings through
+teacher-student remixing.
+</p>
+
+
+<div class="method-flow">
+
+Synthetic only
+&nbsp;&rarr;&nbsp;
+Synthetic + Real
+&nbsp;&rarr;&nbsp;
+Real only
+
+</div>
+
+
+<p>
+To adapt RemixIT to the TSE setting, two key modifications are
+introduced. First, quality-aware filtering retains reliable teacher
+pseudo-targets according to speaker consistency and transcription
+quality, reducing erroneous target-speaker supervision. Second,
+RemixIT-TSE removes direct supervision on the Non-target component,
+which may contain interfering speakers, noise, reverberation, and
+teacher errors, and instead optimizes the student only against the
+detached teacher Target using negative SI-SNR loss.
+</p>
+
+
+<div class="method-highlight">
+
+In this way, pseudo-target quality and target-speaker consistency are
+explicitly prioritized during real-world adaptation, while the
+Non-target component is used only for remixing.
+
+</div>
+
+</div>
+
+
+<!-- ============================================================
+     Framework Figure
+============================================================ -->
+
+<div class="figure">
+
+<img
+src="assets/framework.png"
+alt="Overview of the proposed RemixIT-TSE framework">
+
+<div class="caption">
+Overview of the proposed progressive synthetic-to-real adaptation
+framework for target speech extraction.
+</div>
+
+</div>
+
+
+<!-- ============================================================
+     Results
+============================================================ -->
+
+<h2>Results</h2>
+
+<div class="text">
+
+<p>
+We evaluate RemixIT-TSE on the EVAL-1 and EVAL-2 sets of the
+SLT 2026 REAL-TSE Challenge. RemixIT-TSE consistently outperforms
+the source-domain SDP baseline under both seen and unseen real-world
+conditions.
+</p>
+
+</div>
+
+
+<h3>Results on REAL-TSE Evaluation Sets</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Set</th>
+<th>System</th>
+<th>TER ↓</th>
+<th>SIM ↑</th>
+<th>OVRL ↑</th>
+<th>P808 ↑</th>
+<th>F1 ↑</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<!-- EVAL-1 -->
+
+<tr>
+<td rowspan="2">EVAL-1</td>
+<td>SDP</td>
+<td>0.726</td>
+<td>0.485</td>
+<td>2.049</td>
+<td>2.923</td>
+<td>0.824</td>
+</tr>
+
+<tr>
+<td><strong>RemixIT-TSE</strong></td>
+<td class="best">0.680</td>
+<td class="best">0.533</td>
+<td class="best">2.173</td>
+<td class="best">3.088</td>
+<td class="best">0.837</td>
+</tr>
+
+
+<!-- EVAL-2 -->
+
+<tr>
+<td rowspan="2">EVAL-2</td>
+<td>SDP</td>
+<td>0.763</td>
+<td>0.335</td>
+<td>1.850</td>
+<td>2.710</td>
+<td>0.804</td>
+</tr>
+
+<tr>
+<td><strong>RemixIT-TSE</strong></td>
+<td class="best">0.713</td>
+<td class="best">0.408</td>
+<td class="best">2.040</td>
+<td class="best">2.978</td>
+<td class="best">0.837</td>
+</tr>
+
+
+<!-- Combined -->
+
+<tr>
+<td rowspan="2">Combined</td>
+<td>SDP</td>
+<td>0.748</td>
+<td>0.395</td>
+<td>1.929</td>
+<td>2.790</td>
+<td>0.812</td>
+</tr>
+
+<tr>
+<td><strong>RemixIT-TSE</strong></td>
+<td class="best">0.700</td>
+<td class="best">0.458</td>
+<td class="best">2.093</td>
+<td class="best">3.022</td>
+<td class="best">0.837</td>
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="note">
+
+On the unseen EVAL-2 set, RemixIT-TSE achieves a
+<strong>6.53% relative TER reduction</strong>, together with
+relative improvements of
+<strong>21.84% in speaker similarity</strong>,
+<strong>9.89% in DNSMOS-P808</strong>, and
+<strong>4.10% in target-activity F1</strong>
+over the source-domain baseline.
+
+</div>
+
+
+<!-- ============================================================
+     Audio Demo
+============================================================ -->
+
+<h2 id="audio-demo">Audio Demo</h2>
+
+<div class="text">
+
+<p>
+We provide representative real-world examples for qualitative
+comparison. Each example contains the original mixture, the
+target-speaker enrollment utterance, and outputs from the SDP baseline,
+two SAMoM-based adaptation settings, and the proposed RemixIT-TSE
+system.
+</p>
+
+<p>
+All systems process the same mixture using the same target-speaker
+enrollment utterance.
+</p>
+
+</div>
+
+
+<!-- ============================================================
+     Demo 1
+============================================================ -->
+
+<div class="demo-block">
+
+<div class="demo-title">
+Demo 1
+</div>
+
+<div class="audio-grid">
+
+<div class="audio-item">
+<strong>Mixture</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/mixture.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>Enrollment</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/enrollment.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SDP</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/SDP.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (synthetic clean)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/SAMoM_synthetic_clean.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (real single-spk.)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/SAMoM_real_single_spk.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>RemixIT-TSE</strong>
+
+<audio controls preload="none">
+<source src="audio/demo1/RemixIT_TSE.wav" type="audio/wav">
+</audio>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ============================================================
+     Demo 2
+============================================================ -->
+
+<div class="demo-block">
+
+<div class="demo-title">
+Demo 2
+</div>
+
+<div class="audio-grid">
+
+<div class="audio-item">
+<strong>Mixture</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/mixture.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>Enrollment</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/enrollment.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SDP</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/SDP.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (synthetic clean)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/SAMoM_synthetic_clean.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (real single-spk.)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/SAMoM_real_single_spk.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>RemixIT-TSE</strong>
+
+<audio controls preload="none">
+<source src="audio/demo2/RemixIT_TSE.wav" type="audio/wav">
+</audio>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ============================================================
+     Demo 3
+============================================================ -->
+
+<div class="demo-block">
+
+<div class="demo-title">
+Demo 3
+</div>
+
+<div class="audio-grid">
+
+<div class="audio-item">
+<strong>Mixture</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/mixture.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>Enrollment</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/enrollment.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SDP</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/SDP.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (synthetic clean)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/SAMoM_synthetic_clean.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>SAMoM (real single-spk.)</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/SAMoM_real_single_spk.wav" type="audio/wav">
+</audio>
+</div>
+
+
+<div class="audio-item">
+<strong>RemixIT-TSE</strong>
+
+<audio controls preload="none">
+<source src="audio/demo3/RemixIT_TSE.wav" type="audio/wav">
+</audio>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ============================================================
+     Citation
+============================================================ -->
+
+<h2>Citation</h2>
+
+<div class="text">
+
+<p>
+If you find this work useful, please consider citing:
+</p>
+
+</div>
+
+
+<pre>
+@article{wang2026remixittse,
+  title={RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for
+         Target Speech Extraction via Target-Aware Supervision and Remixing},
+  author={Wang, Yu and Guan, Haixin and Wei, Shuang and Long, Yanhua},
+  journal={arXiv preprint arXiv:2609.35118},
+  year={2026}
+}
+</pre>
+
+
+<!-- ============================================================
+     Footer
+============================================================ -->
+
+<footer>
+
+RemixIT-TSE
+
+<br>
+
+<a href="https://arxiv.org/abs/2609.35118" target="_blank">
+arXiv:2609.35118
+</a>
+
+&nbsp; | &nbsp;
+
+<a href="https://github.com/YuWang-Speech/RemixIT-TSE" target="_blank">
+GitHub
+</a>
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

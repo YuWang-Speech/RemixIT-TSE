@@ -8,8 +8,8 @@ RemixIT-TSE extends the RemixIT paradigm from speech enhancement to real-world t
  
 ## 🔥 News 
  
-- [**2026-09**] The RemixIT-TSE project page is released. 
-- [**2026-09**] Pre-trained models and audio examples will be available soon. 
+- [**2026-10-08**] The [RemixIT-TSE demo page](https://htmlpreview.github.io/?https://github.com/YuWang-Speech/RemixIT-TSE/blob/main/index.html#audio-demo) is available. Audio samples will be added progressively. 
+- [**2026-09-28**] The [RemixIT-TSE preprint](https://arxiv.org/abs/2609.35118) is available on arXiv. 
  
 ## About RemixIT-TSE 
  

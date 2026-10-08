@@ -54,16 +54,16 @@ On the unseen **EVAL-2** set, RemixIT-TSE achieves a **6.53% relative TER reduct
  
 ## Audio Demo 
  
-Audio examples will be provided in the `demo` folder. 
- 
-The demo will include: 
- 
-- Mixture 
-- Enrollment utterance 
-- SDP baseline output 
-- RemixIT-TSE output 
- 
-> 🎧 Audio samples coming soon. 
+Representative real-world examples are provided on the [**RemixIT-TSE demo page**](https://htmlpreview.github.io/?https://github.com/YuWang-Speech/RemixIT-TSE/blob/main/index.html#audio-demo) for qualitative comparison. Each example contains the same input mixture and target-speaker enrollment utterance, together with outputs from different systems:
+
+- Mixture
+- Enrollment utterance
+- SDP baseline
+- SAMoM (synthetic clean)
+- SAMoM (real single-spk.)
+- RemixIT-TSE
+
+All systems process the same mixture using the same target-speaker enrollment utterance. Audio samples will be added progressively.
  
 ## Pre-trained Models 
  

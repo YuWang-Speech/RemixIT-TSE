@@ -96,7 +96,7 @@ If you find this work useful, please consider citing our paper:
 
 If you find this work useful, please consider citing our paper:
 ```bibtex
-@article{RemixIT-TSE2026,
+@article{wang2026remixittse,
       title={RemixIT-TSE: Progressive Synthetic-to-Real Adaptation for Target Speech Extraction via Target-Aware Supervision and Remixing}, 
       author={Yu Wang and Haixin Guan and Shuang Wei and Yanhua Long},
       year={2026},

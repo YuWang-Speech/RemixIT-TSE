@@ -63,7 +63,7 @@ Representative real-world examples are provided on the [**RemixIT-TSE demo page*
 - SAMoM (real single-spk.)
 - RemixIT-TSE
 
-All systems process the same mixture using the same target-speaker enrollment utterance. Audio samples will be added progressively.
+All systems process the same mixture using the same target-speaker enrollment utterance.
  
 ## Pre-trained Models 
  

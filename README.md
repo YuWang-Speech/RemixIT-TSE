@@ -76,7 +76,6 @@ Pre-trained checkpoints are hosted on Hugging Face:
 
 | Model | Description | Checkpoint |
 |:---|:---|:---:|
-| SDP | Source-domain baseline pretrained on synthetic data | [Hugging Face](https://huggingface.co/YuWang-Speech/RemixIT-TSE) |
 | RemixIT-TSE | Final model after progressive synthetic-to-real adaptation | [Hugging Face](https://huggingface.co/YuWang-Speech/RemixIT-TSE) |
 
 ## Code Release
